@@ -1,5 +1,5 @@
 instant-distance-py/test/instant_distance.so: instant-distance-py/src/lib.rs
-	cargo build --release
+	RUSTFLAGS="-C target-cpu=native" cargo build --release
 	([ -f target/release/libinstant_distance.dylib ] && cp target/release/libinstant_distance.dylib instant-distance-py/test/instant_distance.so) || \
 	([ -f target/release/libinstant_distance.so ] && cp target/release/libinstant_distance.so instant-distance-py/test/instant_distance.so)
 
